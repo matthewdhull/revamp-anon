@@ -3,7 +3,6 @@
 [![BSD-3 license](http://img.shields.io/badge/license-BSD--3-brightgreen.svg)](http://opensource.org/licenses/MIT)
 <!-- [![arXiv](https://img.shields.io/badge/arXiv-2110.11227-b3131b.svg)](https://arxiv.org/abs/xxxx.xxxxx) -->
 
-https://github.com/poloclub/revamp/assets/683979/48a1e85b-3eee-4d6a-94a8-fb6731e0d88e
 
 - REVAMP is an easy-to-use Python library that is the **first-of-its-kind** tool for creating attack scenarios with **arbitrary objects** and simulating **realistic environmental factors, lighting, reflection, and refraction**.
  
@@ -14,7 +13,7 @@ https://github.com/poloclub/revamp/assets/683979/48a1e85b-3eee-4d6a-94a8-fb6731e
 
 Running this command uses a "city street" scene, designates the texture on the mailbox as the attackable parameter, and sets the desired attack class to "stop sign" and uses 64 unique camera positions for rendering.
 
-[Scene Documentation](https://github.com/poloclub/revamp/blob/main/docs/scenes.md)
+Scene Documentation [docs/scenes.md](docs/scenes.md)
 
 ![demo_scene](https://github.com/poloclub/revamp/assets/683979/71119934-e8fb-444c-9fb0-f57e2205c183)
 
@@ -53,19 +52,3 @@ The objective is to find a texture perturbation that is consistently classified 
 A differentiable renderer allows optimization of the underlying 3D scene parameters by obtaining useful gradients of the rendering process. A rendered image of a scene is passed to the victim model (image classifier / object detector). Next, the model's loss is backpropogated through the differentiable renderer to the scene parameters, _e.g._, object texture, object vertex positions, lighting, _etc._. Finally, the chosen scene parameter is iteratively perturbed to fool the model and the scene is re-rendered until the attack succeeds. 
 
 For example, one scenario uses a "cube scene" consisting of a single cube mesh and some lights.  The attackable parameter is the cube's texture in bitmap format. The victim model is a 2-stage object detector (faster-rcnn).  The rendering settings specify that the scene be rendered 48 different sensor positions during the attack.  
-
-
-
-# Credits
-Led by [Matthew Hull](https://matthewdhull.github.io), REVAMP was created in a collaboaration with  [Zijie J. Wang](https://zijie.wang) and [Duen Horng Chau](https://poloclub.github.io/polochau/).
-
-<!-- # Citation
-To learn more about REVAMP, please read our preliminary two-page [demo paper](https://arxiv.org/abs/2110.11227). Thanks!
-
-```latex
-@inproceedings{hull2021autogradeviz,
-      title={Towards Automatic Grading of D3.js Visualizations},
-      author={Matthew Hull, Connor Guerin, Justin Chen, Susanta Routray, Duen Horng (Polo) Chau},
-      booktitle = {IEEE Visualization Conference (VIS), Poster},
-      year={2021}}
-``` -->

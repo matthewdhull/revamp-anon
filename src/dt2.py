@@ -51,8 +51,6 @@ from fvcore.transforms.transform import NoOpTransform
 from detectron2.utils.file_io import PathManager
 
 
-# created symlink in /nvmescratch/mhull32/robust-models-transfer dir for datasets: ln -s /nvmescratch/mhull32/datasets datasets
-
 # coco_train_metadata = MetadataCatalog.get("coco_2017_train")
 # coco_train_dataset_dicts = DatasetCatalog.get("coco_2017_train")
 # zebra_image_path = "datasets/coco/train2017/000000000034.jpg"
@@ -459,7 +457,6 @@ def attack_dt2(cfg:DictConfig) -> None:
         logger.info(f"Using multi-pass rendering with {spp//multi_pass_spp_divisor} passes")
     
     # img_name = 'render_39_s3'
-    # adv_path = f'/nvmescratch/mhull32/robust-models-transfer/renders/{img_name}.jpg'
     mi.set_variant('cuda_ad_rgb')
     mitsuba_tex = mi.load_dict({
         'type': 'bitmap',
